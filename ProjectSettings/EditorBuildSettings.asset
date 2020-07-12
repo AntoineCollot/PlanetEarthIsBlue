@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Relax.unity
     guid: c20282e3d564b9a499d7933241b27be5
+  - enabled: 1
+    path: Assets/Scenes/Level_Tutorial.unity
+    guid: 67719a6aa28d04244837bfb1369a61c7
   m_configObjects: {}

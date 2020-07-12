@@ -12,8 +12,9 @@ public class InitGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Camera cam = Camera.main;
         Vector2 astronautPos = new Vector2(Random.Range(margins.x, 1f- margins.x), Random.Range(margins.y, 1f- margins.y));
-        astronaut.position = (Vector2)Camera.main.ViewportToWorldPoint(astronautPos);
+        astronaut.position = (Vector2)cam.ViewportToWorldPoint(astronautPos);
 
         Vector2 randomPosition = astronautPos;
         //Find a position for the earth that isn't nearby
@@ -21,6 +22,6 @@ public class InitGame : MonoBehaviour
         {
             randomPosition = new Vector2(Random.Range(margins.x, 1f - margins.x), Random.Range(margins.y, 1f - margins.y));
         }
-        earth.position = (Vector2)Camera.main.ViewportToWorldPoint(randomPosition);
+        earth.position = (Vector2)cam.ViewportToWorldPoint(randomPosition);
     }
 }

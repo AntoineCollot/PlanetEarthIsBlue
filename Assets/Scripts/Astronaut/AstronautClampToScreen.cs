@@ -8,6 +8,7 @@ public class AstronautClampToScreen : MonoBehaviour
     Camera cam;
     new Rigidbody2D rigidbody;
     Animator anim;
+    new AudioSource audio;
 
     public enum ScreenState {InScreen, OutOfScreenX, OutOfScreenY}
     ScreenState state;
@@ -45,6 +46,7 @@ public class AstronautClampToScreen : MonoBehaviour
         cam = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        audio = GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,6 +59,8 @@ public class AstronautClampToScreen : MonoBehaviour
             transform.position = ClampToScreen(transform.position);
             ReflectTrajectory(state);
             anim.SetTrigger("Bump");
+            audio.pitch = Random.Range(0.9f, 1.1f);
+            audio.Play();
         }
     }
 

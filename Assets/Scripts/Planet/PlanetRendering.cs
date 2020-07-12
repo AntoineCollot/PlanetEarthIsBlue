@@ -6,6 +6,7 @@ public class PlanetRendering : MonoBehaviour
 {
     [SerializeField, Range(0, 1)] float radius = 0.75f;
     [SerializeField] bool randomizeAtStart = true;
+    public Color mainColor { get; private set; }
 
     [Header("Shared Parameters")]
     [SerializeField, Range(0, 1)] float minStaturationShift = 0.3f;
@@ -64,7 +65,7 @@ public class PlanetRendering : MonoBehaviour
 
     void SetPlanetColors()
     {
-        Color mainColor = PlanetColorManager.RandomColor;
+        mainColor = PlanetColorManager.RandomColor;
 
         Color secondaryColor = mainColor;
         Color.RGBToHSV(secondaryColor, out float h, out float s, out float v);

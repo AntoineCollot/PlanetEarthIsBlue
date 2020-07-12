@@ -10,6 +10,12 @@ public class PlanetPreview : MonoBehaviour
     [SerializeField] int samples = 40;
     LineRenderer line;
 
+    [Header("Audio")]
+    [SerializeField] float audioEvolutionMultiplier = 1;
+    new AudioSource audio;
+    float lastRadius;
+    float baseVolume;
+
     public bool PositionIsInGravityArea(Vector2 pos)
     {
         return Vector2.Distance(transform.position, pos) < gravityRadius;
@@ -19,13 +25,25 @@ public class PlanetPreview : MonoBehaviour
     void Awake()
     {
         line = GetComponent<LineRenderer>();
+        audio = GetComponent<AudioSource>();
+        baseVolume = audio.volume;
         line.positionCount = samples;
+    }
+
+    private void OnEnable()
+    {
+        audio.Play();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
         line.SetPositions(ComputeCirclePoints(radius, samples));
+
+        //Audio
+        audio.volume = Mathf.Lerp(0, baseVolume, Mathf.Abs(lastRadius - radius) / Time.deltaTime * audioEvolutionMultiplier);
+
+        lastRadius = radius;
     }
 
     Vector3[] ComputeCirclePoints(float radius, int samples)

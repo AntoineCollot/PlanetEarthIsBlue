@@ -28,7 +28,7 @@ public class PlanetColorManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        currentPaletteSeed = Random.Range(0, Instance.palettes.palette.Length);
+        currentPaletteSeed = Random.Range(0, palettes.palette.Length);
 
         Debug.Log("Palette " + currentPaletteSeed + " selected");
     }
@@ -36,5 +36,16 @@ public class PlanetColorManager : MonoBehaviour
     public static Color GetColor(int id)
     {
         return Instance.palettes.palette[currentPaletteSeed].colors[id];
+    }
+
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            currentPaletteSeed++;
+            currentPaletteSeed %= palettes.palette.Length;
+            Debug.Log("Palette " + currentPaletteSeed + " selected");
+        }
     }
 }
