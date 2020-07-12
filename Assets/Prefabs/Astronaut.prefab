@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 8000801318099053115}
   - component: {fileID: 8000801318099053114}
   - component: {fileID: 8000801318099053108}
+  - component: {fileID: 6318670936543447665}
   m_Layer: 8
   m_Name: Astronaut
   m_TagString: Untagged
@@ -265,6 +266,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!182 &6318670936543447665
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000801318099053112}
+  m_Enabled: 1
+  m_Mode: 1
+  m_Radius: 2
+  m_WindMain: 20
+  m_WindTurbulence: 1
+  m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01
 --- !u!1 &8000801318296462054
 GameObject:
   m_ObjectHideFlags: 0

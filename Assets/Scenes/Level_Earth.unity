@@ -792,21 +792,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stars
       objectReference: {fileID: 0}
-    - target: {fileID: 8507029742952355773, guid: afedccba460b1214387f61f8102fc6fe,
+    - target: {fileID: 8507029742952355772, guid: afedccba460b1214387f61f8102fc6fe,
         type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1233741103
-      objectReference: {fileID: 0}
-    - target: {fileID: 8507029742952355773, guid: afedccba460b1214387f61f8102fc6fe,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8507029742956186930, guid: afedccba460b1214387f61f8102fc6fe,
-        type: 3}
-      propertyPath: playOnAwake
+      propertyPath: VelocityModule.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8507029742952355772, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029742952355772, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029742952355772, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029742952355773, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1233741103
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029742952355773, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 8507029742956186931, guid: afedccba460b1214387f61f8102fc6fe,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -815,7 +830,27 @@ PrefabInstance:
     - target: {fileID: 8507029742956186931, guid: afedccba460b1214387f61f8102fc6fe,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029743865341208, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029743865341208, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029743865341208, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507029743865341208, guid: afedccba460b1214387f61f8102fc6fe,
+        type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8507029743865341209, guid: afedccba460b1214387f61f8102fc6fe,
         type: 3}
@@ -825,7 +860,7 @@ PrefabInstance:
     - target: {fileID: 8507029743865341209, guid: afedccba460b1214387f61f8102fc6fe,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afedccba460b1214387f61f8102fc6fe, type: 3}
