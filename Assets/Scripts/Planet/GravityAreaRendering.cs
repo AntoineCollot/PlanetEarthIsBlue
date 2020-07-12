@@ -39,8 +39,7 @@ public class GravityAreaRendering : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && planet.CursorIsInGravityArea)
         {
-            StopAllCoroutines();
-            StartCoroutine(UpdateSpriteColor());
+            FlashColor();
         }
     }
 
@@ -49,7 +48,13 @@ public class GravityAreaRendering : MonoBehaviour
         transform.localScale = Vector3.one * planet.gravityRadius * 2 / transform.parent.localScale.x;
     }
 
-    IEnumerator UpdateSpriteColor()
+    public void FlashColor()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FlashColorAnim());
+    }
+
+    IEnumerator FlashColorAnim()
     {
         float t = 0;
         while(t<1)

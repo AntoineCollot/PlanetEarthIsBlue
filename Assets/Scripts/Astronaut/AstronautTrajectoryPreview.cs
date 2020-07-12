@@ -47,14 +47,14 @@ public class AstronautTrajectoryPreview : MonoBehaviour
             List<PlanetGravity> planets = PlanetGravity.GetAllPlanetsApplyingGravity(position);
             foreach(PlanetGravity planet in planets)
             {
-                planet.AngleGravityPull(position, ref velocity);
+                planet.AngleGravityPull(position, ref velocity, out float torque);
             }
 
             if(PlanetSpawner.Instance.planetPreview.PositionIsInGravityArea(position))
             {
                 Vector2 previewPosition = PlanetSpawner.Instance.planetPreview.transform.position;
                 float previewMass = PlanetSpawner.Instance.planetPreview.mass;
-                PlanetGravity.EmulatePlanetGravity(previewPosition, previewMass, position, ref velocity);
+                PlanetGravity.EmulatePlanetGravity(previewPosition, previewMass, position, ref velocity,out bool isBoosting, out float torque);
             }
 
             velocity = velocity * (1 - Time.fixedDeltaTime * rigidbody.drag);

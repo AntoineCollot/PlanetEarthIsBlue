@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Astronaut
+  - Planet
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Space
+    uniqueID: 1233741103
+    locked: 0
+  - name: Planet
+    uniqueID: 133458441
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Astronaut
+    uniqueID: 2735300347
     locked: 0

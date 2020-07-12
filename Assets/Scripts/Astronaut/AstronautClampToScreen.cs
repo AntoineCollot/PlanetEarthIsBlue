@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AstronautClampToScreen : MonoBehaviour
 {
+    [SerializeField] Vector2 margins = Vector2.zero;
     Camera cam;
     new Rigidbody2D rigidbody;
-    [SerializeField] Vector2 margins = Vector2.zero;
+    Animator anim;
 
     public enum ScreenState {InScreen, OutOfScreenX, OutOfScreenY}
     ScreenState state;
@@ -43,6 +44,7 @@ public class AstronautClampToScreen : MonoBehaviour
     {
         cam = Camera.main;
         rigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class AstronautClampToScreen : MonoBehaviour
         {
             transform.position = ClampToScreen(transform.position);
             ReflectTrajectory(state);
+            anim.SetTrigger("Bump");
         }
     }
 

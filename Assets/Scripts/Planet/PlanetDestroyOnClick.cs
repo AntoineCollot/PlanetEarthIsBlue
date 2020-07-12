@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlanetDestroyOnClick : MonoBehaviour
 {
     PlanetGravity planet;
+    GravityAreaRendering gravityRendering;
 
     [SerializeField] ParticleSystem fxPrefab = null;
 
@@ -20,6 +21,7 @@ public class PlanetDestroyOnClick : MonoBehaviour
     void Start()
     {
         planet = GetComponent<PlanetGravity>();
+        gravityRendering = GetComponentInChildren<GravityAreaRendering>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,15 @@ public class PlanetDestroyOnClick : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && CursorIsOverPlanet)
         {
-            SpawnEffect();
-            Destroy(gameObject);
+            if(GameMode.AllowDestructionWhenAttracting || !planet.isAttractingSomething)
+            {
+                SpawnEffect();
+                Destroy(gameObject);
+            }
+            else
+            {
+                gravityRendering.FlashColor();
+            }
         }
     }
 

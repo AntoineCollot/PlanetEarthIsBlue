@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlanetRendering : MonoBehaviour
 {
     [SerializeField, Range(0, 1)] float radius = 0.75f;
+    [SerializeField] bool randomizeAtStart = true;
 
     [Header("Shared Parameters")]
     [SerializeField, Range(0, 1)] float minStaturationShift = 0.3f;
@@ -17,6 +18,7 @@ public class PlanetRendering : MonoBehaviour
     [SerializeField] float maxThresholdWidth = 0.75f;
     Material instancedMaterial;
     PlanetGravity planet;
+    Animator anim;
 
     public const float PLANET_SIZE_MULTIPLIER = 0.75f;
 
@@ -25,10 +27,14 @@ public class PlanetRendering : MonoBehaviour
     {
         planet = GetComponent<PlanetGravity>();
         instancedMaterial = GetComponent<SpriteRenderer>().material;
+        anim = GetComponent<Animator>();
         baseFrequency = instancedMaterial.GetFloat("_NoiseFreq");
 
-        SetPlanetColors();
-        SetPlanetNoise();
+        if (randomizeAtStart)
+        {
+            SetPlanetColors();
+            SetPlanetNoise();
+        }
         UpdatePlanetSize();
     }
 
@@ -36,6 +42,9 @@ public class PlanetRendering : MonoBehaviour
     void Update()
     {
         instancedMaterial.SetFloat("_CircleRadius", radius);
+
+        if(anim!=null)
+            anim.SetBool("IsAttracting", planet.isAttractingSomething);
     }
 
     void SetPlanetNoise()
@@ -55,7 +64,7 @@ public class PlanetRendering : MonoBehaviour
 
     void SetPlanetColors()
     {
-        Color mainColor = PlanetColorPalettes.RandomColor;
+        Color mainColor = PlanetColorManager.RandomColor;
 
         Color secondaryColor = mainColor;
         Color.RGBToHSV(secondaryColor, out float h, out float s, out float v);
