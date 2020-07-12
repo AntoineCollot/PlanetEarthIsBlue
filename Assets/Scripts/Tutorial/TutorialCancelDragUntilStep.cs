@@ -6,7 +6,7 @@ public class TutorialCancelDragUntilStep : TutoListener
 {
     new Rigidbody2D rigidbody;
     float originalDrag;
-    float originalAngualarDrag;
+    float originalAngularDrag;
 
     protected override void Start()
     {
@@ -14,7 +14,7 @@ public class TutorialCancelDragUntilStep : TutoListener
 
         rigidbody = GetComponent<Rigidbody2D>();
         originalDrag = rigidbody.drag;
-        originalAngualarDrag = rigidbody.angularDrag;
+        originalAngularDrag = rigidbody.angularDrag;
 
         rigidbody.drag = 0;
         rigidbody.angularDrag = 0;
@@ -23,6 +23,8 @@ public class TutorialCancelDragUntilStep : TutoListener
     protected override void OnStep()
     {
         rigidbody.drag = originalDrag;
-        rigidbody.angularDrag = originalAngualarDrag;
+        rigidbody.angularDrag = originalAngularDrag;
+
+        GetComponent<AstronautCancelDragWhenLowSpeed>().enabled = true;
     }
 }

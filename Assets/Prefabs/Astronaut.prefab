@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 8000801318099053113}
   - component: {fileID: 8000801318099053109}
   - component: {fileID: 8000801318099053115}
+  - component: {fileID: 335277198533132131}
   - component: {fileID: 8000801318099053114}
   - component: {fileID: 8000801318099053108}
   - component: {fileID: 6318670936543447665}
@@ -231,6 +232,20 @@ MonoBehaviour:
   minForce: 5
   maxForce: 5
   maxTorque: 5
+--- !u!114 &335277198533132131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000801318099053112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfd2e86372d07d48b4dc7998d92a122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minVelocity: 1
+  minAngularVelocity: 25
 --- !u!50 &8000801318099053114
 Rigidbody2D:
   serializedVersion: 4

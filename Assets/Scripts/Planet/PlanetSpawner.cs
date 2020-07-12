@@ -33,6 +33,12 @@ public class PlanetSpawner : MonoBehaviour
         {
             StartCoroutine(SpawnPlanetProcess());
         }
+        if(Input.GetMouseButtonDown(1))
+        {
+            isSpawningPlanet = false;
+            planetPreview.gameObject.SetActive(false);
+            StopAllCoroutines();
+        }
     }
 
     IEnumerator SpawnPlanetProcess()

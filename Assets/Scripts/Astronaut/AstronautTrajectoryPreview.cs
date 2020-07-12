@@ -58,7 +58,14 @@ public class AstronautTrajectoryPreview : MonoBehaviour
             }
 
             velocity = velocity * (1 - Time.fixedDeltaTime * rigidbody.drag);
+            //max velocity
+            if(velocity.magnitude>Physics2D.maxTranslationSpeed / Time.fixedDeltaTime)
+            {
+                velocity = velocity.normalized * Physics2D.maxTranslationSpeed / Time.fixedDeltaTime;
+            }
+
             position += velocity * Time.fixedDeltaTime;
+
 
             int currentId = Mathf.CeilToInt((elapsedTime / previewTime) * pointCount);
             points[currentId] = position;

@@ -900,23 +900,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 788342846}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &596194538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596194530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d2b5bc7a2d53464aa753c87b48be863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  astronaut: {fileID: 677676933}
-  earth: {fileID: 1887289062}
-  margins: {x: 0.3, y: 0.2}
-  minDistance: 0.3
---- !u!82 &596194539
+--- !u!82 &596194531
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -926,7 +910,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1e9d0c22daf9d6d4480cc3d3af0da758, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ed2d920856117b143868b83df9b792e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1012,6 +996,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &596194538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596194530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2b5bc7a2d53464aa753c87b48be863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  astronaut: {fileID: 677676933}
+  earth: {fileID: 1887289062}
+  margins: {x: 0.3, y: 0.2}
+  minDistance: 0.3
 --- !u!4 &677676933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8000801318099053113, guid: a97a575e17631e340992a3bc15fff325,
@@ -1159,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 3401308022182140356, guid: 0f84c53450ebf9a43ae7e35ebc94e7a9,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3464913428772465713, guid: 0f84c53450ebf9a43ae7e35ebc94e7a9,
         type: 3}
@@ -1174,7 +1174,7 @@ PrefabInstance:
     - target: {fileID: 6668765068762900720, guid: 0f84c53450ebf9a43ae7e35ebc94e7a9,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7815518124617560889, guid: 0f84c53450ebf9a43ae7e35ebc94e7a9,
         type: 3}
@@ -1194,7 +1194,7 @@ PrefabInstance:
     - target: {fileID: 8915222798075308673, guid: 0f84c53450ebf9a43ae7e35ebc94e7a9,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8915222798075308686, guid: 0f84c53450ebf9a43ae7e35ebc94e7a9,
         type: 3}
@@ -2346,7 +2346,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1793894933}
   - component: {fileID: 1793894935}
-  - component: {fileID: 1793894934}
   m_Layer: 5
   m_Name: Step Earth
   m_TagString: Untagged
@@ -2374,33 +2373,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1793894934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793894932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf7c6279ff8ac34fa07bbd1eb71c211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  step: 7
-  onStep:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 596194530}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &1793894935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2418,6 +2390,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1939880282}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 596194530}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3177,6 +3160,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 335277198533132131, guid: a97a575e17631e340992a3bc15fff325,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8000801318099053112, guid: a97a575e17631e340992a3bc15fff325,
         type: 3}
       propertyPath: m_Name

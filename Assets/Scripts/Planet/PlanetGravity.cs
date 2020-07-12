@@ -12,7 +12,7 @@ public class PlanetGravity : MonoBehaviour
     public bool isAttractingSomething { get; private set; }
     public bool isBoostingSomething;
 
-    public const float VELOCITY_BOOST = 5;
+    public const float VELOCITY_BOOST = 3;
     public const float RESULTING_TORQUE_MULT = 0.03f;
     public const float G = 9.81f;
         
